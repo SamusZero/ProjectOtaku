@@ -1,0 +1,139 @@
+/* WORKING CODE */
+
+// $('.mediaCall').click(function(e){
+//     e.preventDefault();
+
+//  let title = $('#nameFinder').val();
+//  const anime =  {
+//     url:`https://api.jikan.moe/v3/search/anime?q=${title}&limit=10`, 
+//     success: (data)=>{
+//         console.log(data);
+        
+
+//     },
+//     error: ()=>{
+//         console.log('bad request');
+//     }
+//  }
+
+
+//  $.ajax(anime);
+ 
+//  })
+
+/* WORKING CODE */
+
+/*
+$('.mediaCall').click(function(e){
+    e.preventDefault();
+
+ let title = $('#nameFinder').val();
+ const anime =  {
+    url:`https://api.jikan.moe/v3/search/anime?q=${title}&limit=10`, 
+    success: (data)=>{
+        $('#printContents').empty();
+        const animeList = data.results;
+        for(let i = 0; i < animeList.length; i++){
+            const anime = animeList[i];
+            const $div = $('<div></div>');
+            $div.append(`<h1>${anime.title}</h1>`)
+            $div.append(`<img src=${anime.image_url}/>`)
+            $div.append(`<p>${"Rating " + anime.rated}</p>`)
+            $div.append(`<p>${anime.synopsis}</p>`)
+            $div.append(`<p>${"Score " + anime.score}</p>`)
+            $div.append(`<p>${"Type " + anime.type}</p>`)
+            //$div.append(`<p>${"Aired " + anime.start_date}</p>`)
+            $('#printContents').append($div)
+        }
+         
+    },
+    error: ()=>{
+        console.log('bad request');
+    }
+ }
+
+
+ $.ajax(anime);
+ 
+ })
+
+ */
+
+
+
+ /*    WORKING CODE
+
+$('.mediaCall').click(function(e){
+    e.preventDefault();
+
+ let title = $('#nameFinder').val();
+ const anime =  {
+    url:`https://api.jikan.moe/v3/search/anime?q=${title}&limit=10`, 
+    success: (data)=>{
+        //DISPLAY CONTENT
+        $('#printContents').empty();
+        const animeList = data.results;
+        for(let i = 0; i < animeList.length; i++){
+            // const anime = animeList[i];
+            const $div = $('<div></div>');
+
+            //Previous Print Content Code
+            // $div.append(`<h1>${anime.title}</h1>`)
+            // $div.append(`<img src=${anime.image_url}/>`)
+            // $div.append(`<p>${"Rating: " + anime.rated}</p>`)
+            // $div.append(`<p>${anime.synopsis}</p>`)
+            // $div.append(`<p>${"Score: " + anime.score}</p>`)
+            // $div.append(`<p>${"Type: " + anime.type}</p>`)
+            //$div.append(`<p>${"Aired " + anime.start_date}</p>`)
+            
+            $('#printContents').append($div)
+
+            var card = document.getElementById('printContents');
+            while (card.firstChild) {card.removeChild(card.firstChild);}
+    
+            data.results.forEach(anime => {
+                document.getElementById('printContents')
+                .insertAdjacentHTML(
+                    'beforeend',
+                    `
+                    <a href="${anime.url}" class="card">
+
+                    <div class="card__name">
+                    <span>${anime.title}</span> 
+                    </div>
+
+                        <div class="card__image">
+                            <img src="${anime.image_url}" />
+                        </div>
+
+
+                        <div class="card__name">
+                            <span>${"Rating: " + anime.rated}</span> 
+                        </div>
+
+
+                        <div class="card__name">
+                            <span>${"Score: " + anime.score}</span> 
+                        </div>
+
+
+                        <div class="card__name">
+                            <span>${"Type: " + anime.type}</span> 
+                        </div>
+                        
+                    </a>
+                    `
+                );
+            });
+        }
+         
+    },
+    error: ()=>{
+        console.log('bad request');
+    }
+ }
+
+ $.ajax(anime);
+ 
+ })
+ */
